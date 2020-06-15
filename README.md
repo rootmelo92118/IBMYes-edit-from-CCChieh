@@ -99,3 +99,20 @@ RESOURSE_ID // 资源组ID
 把四个secret补充完成
 
 ![image-20200615185015130](img/README/image-20200615185015130.png)
+
+之后点击上方Actions，在这里你就会看到有个IBM Cloud Auto Restart在执行
+
+![image-20200615185614978](img/README/image-20200615185614978.png)
+
+第一次可能因为secret没添加导致workflow执行失败，只需要点下
+
+![image-20200615191100959](img/README/image-20200615191100959.png)
+
+进去后按照下图
+
+![image-20200615191035212](img/README/image-20200615191035212.png)
+
+找到 `Re-run jobs`重新执行一次即可，至此自动重启已经ok了。
+
+> 感谢药油@[My Flavor](https://yaohuo.me/bbs/userinfo.aspx?touserid=24109)，原本打算弄bash在自己服务器定期执行脚本，现在看了他的帖子，发现用Actions是一个更好的选择。
+
