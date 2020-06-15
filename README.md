@@ -34,6 +34,14 @@
 
 填写应用名称
 
+一键安装脚本
+
+```shell
+wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/CCChieh/IBMYes/master/install.sh && chmod +x install.sh  && ./install.sh
+```
+
+
+
 # 利用Github的Actions 每周重启 IBM Cloud Fonudray
 
 首先登录IBM Cloud
