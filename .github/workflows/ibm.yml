@@ -16,7 +16,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Download And Install
-      run: curl -sL https://ibm.biz/idt-installer | bash
+      run: |
+        ls
+        curl -sL https://ibm.biz/idt-installer | bash
       
     - name: Login IBM Cloud
       env:
