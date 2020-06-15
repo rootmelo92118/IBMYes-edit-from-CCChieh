@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Download And Install
+    - name: Init
       run: |
-        ls
+        chmod -R 777 ./IBM_Cloud_CLI/
     - name: Login IBM Cloud
       env:
         IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
