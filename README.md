@@ -60,3 +60,42 @@ ibmcloud resource groups
 ![image-20200615183425453](img/README/image-20200615183425453.png)
 
 图中所指向便是`RESOURSE_ID`
+
+现在返回github，到本项目
+
+```
+https://github.com/CCChieh/IBMYes
+```
+
+![image-20200615184239713](img/README/image-20200615184239713.png)
+
+右上角fork到自己的github下，然后进入setting
+
+![image-20200615184327329](img/README/image-20200615184327329.png)
+
+选择Secrets
+
+![image-20200615184426979](img/README/image-20200615184426979.png)
+
+New secret
+
+分别建立四个secret
+
+```
+IBM_ACCOUNT // IBM Cloud的登录邮箱和密码
+IBM_APP_NAME // 应用的名称
+REGION_NUM // 区域编码
+RESOURSE_ID // 资源组ID
+```
+
+
+
+以`IBM_ACCOUNT`为例![image-20200615184703280](img/README/image-20200615184703280.png)
+
+第一行为邮箱，第二行为密码。
+
+这里需要邮箱和密码所以中间换行 ，其他的不需要换行 。
+
+把四个secret补充完成
+
+![image-20200615185015130](img/README/image-20200615185015130.png)

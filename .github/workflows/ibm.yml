@@ -1,0 +1,42 @@
+name: IBM Cloud Auto Restart
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 12 * * FRI'
+
+jobs:
+  ibm-cloud-restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Download And Install
+      run: curl -sL https://ibm.biz/idt-installer | bash
+      
+    - name: Login IBM Cloud
+      env:
+        IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
+        REGION_NUM: ${{ secrets.REGION_NUM }}
+      run: |
+        ibmcloud login <<EOF
+        $IBM_ACCOUNT
+        $REGION_NUM
+        no
+        EOF
+    - name: Target IBM Cloud
+      env:
+        RESOURSE_ID: ${{ secrets.RESOURSE_ID }}
+      run: |
+        ibmcloud target -g "$RESOURSE_ID"
+        ibmcloud target --cf
+        ibmcloud cf install
+    - name: Restart IBM Cloud
+      env:
+        IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
+      run: |
+        ibmcloud cf restart "$IBM_APP_NAME"
