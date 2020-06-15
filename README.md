@@ -171,9 +171,19 @@ RESOURSE_ID // 资源组ID
 
 ![image-20200615185015130](img/README/image-20200615185015130.png)
 
-之后点击上方Actions，在这里你就会看到有个IBM Cloud Auto Restart在执行
+之后点击上方Actions，在这里你就会看到有个IBM Cloud Auto Restart在执行。
 
 ![image-20200615185614978](img/README/image-20200615185614978.png)
+
+如果没有看见Action的话到自己仓库的`/.github/workflows/ibm.yml`
+
+![image-20200615235426917](img/README/image-20200615235426917.png)
+
+编辑下，随意增添个空行然后commit下
+
+![image-20200615235540567](img/README/image-20200615235540567.png)
+
+就可以看见有action了
 
 第一次可能因为secret没添加导致workflow执行失败，只需要点下
 
