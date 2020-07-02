@@ -24,7 +24,7 @@ create_mainfest_file(){
       memory: ${IBM_MEM_SIZE}M
 EOF
 
-    cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/config  << EOF
+    cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/config.json  << EOF
     {
         "inbounds": [
             {
@@ -100,6 +100,25 @@ install(){
     echo "安装完成。"
     echo "生成的随机 UUID：${UUID}"
     echo "生成的随机 WebSocket路径：${WSPATH}"
+    VMESSCODE=$(base64 -w 0 << EOF
+    {
+      "v": "2",
+      "ps": "ibmyes",
+      "add": "ibmyes.us-south.cf.appdomain.cloud",
+      "port": "443",
+      "id": "${UUID}",
+      "aid": "64",
+      "net": "ws",
+      "type": "none",
+      "host": "",
+      "path": "${WSPATH}",
+      "tls": "tls"
+    }
+EOF
+    )
+	echo "配置链接："
+    echo vmess://${VMESSCODE}
+
 }
 
 clone_repo
