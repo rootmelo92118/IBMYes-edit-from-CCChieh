@@ -107,7 +107,7 @@ install(){
       "add": "ibmyes.us-south.cf.appdomain.cloud",
       "port": "443",
       "id": "${UUID}",
-      "aid": "64",
+      "aid": "4",
       "net": "ws",
       "type": "none",
       "host": "",
