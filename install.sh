@@ -86,7 +86,7 @@ clone_repo(){
     unzip latest-v2ray.zip v2ray v2ctl geoip.dat geosite.dat
     rm latest-v2ray.zip
     
-    chmod +x v2ray v2ctl
+    chmod 0755 ./*
     cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
     echo "初始化完成。"
 }
