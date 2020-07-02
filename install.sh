@@ -11,7 +11,10 @@ create_mainfest_file(){
 	IBM_MEM_SIZE=256
     fi
     echo "内存大小：${IBM_MEM_SIZE}"
-    
+	UUID=$(cat /proc/sys/kernel/random/uuid)
+    echo "生成随机UUID：${UUID}"
+	WSPATH=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+	echo "生成随机WebSocket路径：${WSPATH}"
     
     cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/manifest.yml  << EOF
     applications:
@@ -21,7 +24,37 @@ create_mainfest_file(){
       memory: ${IBM_MEM_SIZE}M
 EOF
 
-     echo "配置完成。"
+    cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/config  << EOF
+	{
+		"inbounds": [
+			{
+				"port": 8080,
+				"protocol": "vmess",
+				"settings": {
+					"clients": [
+						{
+							"id": "${UUID}",
+							"alterId": 4
+						}
+					]
+				},
+				"streamSettings": {
+					"network":"ws",
+					"wsSettings": {
+						"path": "${WSPATH}"
+					}
+				}
+			}
+		],
+		"outbounds": [
+			{
+				"protocol": "freedom",
+				"settings": {}
+			}
+		]
+	}
+EOF
+    echo "配置完成。"
 }
 
 clone_repo(){
@@ -42,6 +75,8 @@ install(){
     ibmcloud cf install
     ibmcloud cf push
     echo "安装完成。"
+    echo "生成的随机 UUID：${UUID}"
+	echo "生成的随机 WebSocket路径：${WSPATH}"
 }
 
 clone_repo
