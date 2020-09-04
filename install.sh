@@ -59,6 +59,7 @@ EOF
 
 clone_repo(){
     echo "进行初始化。。。"
+	rm -rf IBMYes
     git clone https://github.com/CCChieh/IBMYes
     cd IBMYes
     git submodule update --init --recursive
@@ -96,6 +97,7 @@ install(){
     cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
     ibmcloud target --cf
     ibmcloud cf install
+	N
     ibmcloud cf push
     echo "安装完成。"
     echo "生成的随机 UUID：${UUID}"
