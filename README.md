@@ -1,10 +1,14 @@
 # IBMYes
 
+**测速节点已经停用，无法测试**
+
+**本项目初衷是想学习CI/CD以及容器的使用，任何与此无关的问题将不做回复。**
+
 本项目包括3部分
 
-1. IBM Cloud Fonudray搭建V2Ray ws
+1. IBM Cloud Fonudray搭建应用
 2. 利用Github的Actions 每周重启 IBM Cloud Fonudray
-3. Cloudflare 高速节点中转
+3. ~~Cloudflare 高速节点中转~~
 
 # 使用IBM Cloud Fonudray搭建V2Ray
 
