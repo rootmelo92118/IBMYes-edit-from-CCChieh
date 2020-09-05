@@ -8,7 +8,7 @@ on:
 
 jobs:
   ibm-cloud-restart:
-    runs-on: ubuntu-latest
+    runs-on: ccchieh/centos-common
 
     steps:
     - uses: actions/checkout@v2
