@@ -34,14 +34,14 @@ EOF
                     "clients": [
                         {
                             "id": "${UUID}",
-                            "alterId": 4
+                            "alterId": 64
                         }
                     ]
                 },
                 "streamSettings": {
                     "network":"ws",
                     "wsSettings": {
-                        "path": ""
+                        "path": "${WSPATH}"
                     }
                 }
             }
@@ -60,7 +60,7 @@ EOF
 clone_repo(){
     echo "进行初始化。。。"
 	rm -rf IBMYes
-    git clone https://github.com/CCChieh/IBMYes
+    git clone https://github.com/rootmelo92118/IBMYes-edit-from-CCChieh
     cd IBMYes
     git submodule update --init --recursive
     cd v2ray-cloudfoundry/v2ray
