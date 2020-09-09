@@ -59,7 +59,7 @@ EOF
 
 clone_repo(){
     echo "进行初始化。。。"
-	rm -rf IBMYes
+	rm -rf IBMYes-edit-from-CCChieh
     git clone https://github.com/rootmelo92118/IBMYes-edit-from-CCChieh
     cd IBMYes
     git submodule update --init --recursive
