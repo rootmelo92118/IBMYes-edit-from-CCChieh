@@ -88,7 +88,7 @@ clone_repo(){
     rm latest-v2ray.zip
     
     chmod 0755 ./*
-    cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
+    cd ${SH_PATH}/IBMYes-edit-from-CCChieh/v2ray-cloudfoundry
     echo "初始化完成。"
 }
 
