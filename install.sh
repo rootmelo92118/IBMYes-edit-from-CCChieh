@@ -94,7 +94,7 @@ clone_repo(){
 
 install(){
     echo "进行安装。。。"
-    cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
+    cd ${SH_PATH}/IBMYes-edit-from-CCChieh/v2ray-cloudfoundry
     ibmcloud target --cf
     echo "N"|ibmcloud cf install
     ibmcloud cf push
@@ -104,11 +104,11 @@ install(){
     VMESSCODE=$(base64 -w 0 << EOF
     {
       "v": "2",
-      "ps": "ibmyes",
+      "ps": "v2ray-WebSocket+",
       "add": "ibmyes.us-south.cf.appdomain.cloud",
       "port": "443",
       "id": "${UUID}",
-      "aid": "4",
+      "aid": "64",
       "net": "ws",
       "type": "none",
       "host": "",
