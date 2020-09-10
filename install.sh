@@ -102,7 +102,7 @@ install(){
     echo "进行安装。。。"
     cd ${SH_PATH}/IBMYes-edit-from-CCChieh/v2ray-cloudfoundry
     ibmcloud target --cf
-    ibmcloud cf install
+    echo "N"|ibmcloud cf install
     ibmcloud cf push
     echo "安装完成。"
     echo "生成的随机 UUID：${UUID}"
